@@ -4,6 +4,9 @@ import { defineConfig, loadEnv } from 'vite';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
+      // ** MODIFICA ESTA LÍNEA **
+      base: '/ViteTranscriptor/', // <--- Debe ser el nombre exacto de tu repositorio, rodeado de barras
+      // **********************
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
